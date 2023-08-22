@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Example.Api;
-using Example.Common;
-using Example.Extensions;
-using Example.Saves.Entries;
 using Random = UnityEngine.Random;
 
 namespace Example.Locations.ItemChallenge {

@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
-using Example.Api;
-using Example.Common;
 
 namespace Example.Locations.ItemChallenge {
     public class ItemChallengeChestConfig : IConfig {

@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
-using Unity.Mathematics.FixedPoint;
-using UnityEngine;
-using Example.Api;
 
 namespace Example.Locations.ItemChallenge {
 
     [Serializable]
     public class ItemChallengeBalanceConfig : IConfig {
-        public static readonly IConfig CONFIG_PATH = new("rules/Challenge_board_balance");
+        public static readonly IConfig CONFIG_PATH = new("configs/Challenge_board_balance");
 
         public const int MIN_INPUT_SLOTS_AMOUNT = 1;
         public const int MAX_INPUT_SLOTS_AMOUNT = 2;
@@ -25,25 +21,25 @@ namespace Example.Locations.ItemChallenge {
 
         public string Id { get; set; }
 
-        [field : SerializeField] [JsonProperty("Challenge_inputs_data")]
+        [JsonProperty("Challenge_inputs_data")]
         public Dictionary<IConfig, ChallengeInputsData> ChallengeInputsData { get; set; }
         
-        [field : SerializeField] [JsonProperty("resources_surplus_data")]
+        [JsonProperty("resources_surplus_data")]
         public Dictionary<IConfig, ResourceSurplusData> ResourcesSurplusData { get; set; }
 
-        [field : SerializeField] [JsonProperty("Challenge_difficulty_types_data")]
+        [JsonProperty("Challenge_difficulty_types_data")]
         public Dictionary<ChallengeDifficultyType, ChallengeDifficultyTypeData> ChallengeDifficultyTypesData { get; set; }
         
-        [field : SerializeField] [JsonProperty("slots_amount_difficulty_modifier_data")]
+        [JsonProperty("slots_amount_difficulty_modifier_data")]
         public Dictionary<int, ChallengeDifficultyModifierData> SlotsAmountDifficultyModifierData { get; set; }
         
-        [field : SerializeField] [JsonProperty("extraction_duration_type_difficulty_modifier_data")]
+        [JsonProperty("extraction_duration_type_difficulty_modifier_data")]
         public Dictionary<ExtractionDurationType, ChallengeDifficultyModifierData> ExtractionDurationTypeDifficultyModifierData { get; set; }
         
-        [field : SerializeField] [JsonProperty("Challenge_purpose_difficulty_modifier_data")]
+        [JsonProperty("Challenge_purpose_difficulty_modifier_data")]
         public Dictionary<ChallengePurpose, ChallengeDifficultyModifierData> ChallengePurposeDifficultyModifierData { get; set; }
         
-        [field : SerializeField] [JsonProperty("Challenge_outputs_data")]
+        [JsonProperty("Challenge_outputs_data")]
         public Dictionary<IConfig, ChallengeOutputData> ChallengeOutputsData { get; set; }
 
         public ItemChallengeBalanceDbData ToStaticData() {

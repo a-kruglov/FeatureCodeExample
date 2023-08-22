@@ -8,16 +8,16 @@ namespace Example.Locations.ItemChallenge {
         
         public string Id { get;  set; }
         
-        [field : SerializeField] [JsonProperty("difficulty_type")]
+        [JsonProperty("difficulty_type")]
         public ChallengeDifficultyType DifficultyType { get; set; }
         
-        [field : SerializeField] [JsonProperty("availability_conditions")]
+        [JsonProperty("availability_conditions")]
         public IEnumerable<EventData> AccessParams { get; private set; }
         
-        [field : SerializeField] [JsonProperty("Challenge_items")]
+        [JsonProperty("Challenge_items")]
         public IEnumerable<GameItem> ChallengeItems { get; private set; }
         
-        [field : SerializeField] [JsonProperty("rewards")]
+        [JsonProperty("rewards")]
         public IEnumerable<RewardData> Rewards { get; private set; }
 
         public ChallengeDbData ToStaticData(IStaticDataHelperModule staticDataHelperModule) {

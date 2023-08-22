@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Example.Api;
+﻿using Example.Api;
 
 namespace Example.Locations.ItemChallenge {
     public readonly struct ItemChallengeChestData : IItemChallengeChestData {

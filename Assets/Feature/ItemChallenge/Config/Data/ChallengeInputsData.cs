@@ -1,25 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Unity.Mathematics.FixedPoint;
-using UnityEngine;
-using Example.Api;
 
 namespace Example.Locations.ItemChallenge {
     [Serializable]
     public class ChallengeInputsData {
-        [field : SerializeField] [JsonProperty("availability_conditions")]
+        [JsonProperty("availability_conditions")]
         public IEnumerable<EventData> AccessParams { get; set; }
         
-        [field : SerializeField] [JsonProperty("resource_id")]
+        [JsonProperty("resource_id")]
         public string ResourceId { get; set; }
         
-        [field : SerializeField] [JsonProperty("extraction_difficulty")]
+        [JsonProperty("extraction_difficulty")]
         public float ExtractionDifficulty { get; set; }
         
-        [field : SerializeField] [JsonProperty("extraction_duration_type")] [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("extraction_duration_type")] [JsonConverter(typeof(StringEnumConverter))]
         public ExtractionDurationType ExtractionDurationType { get; set; }
 
         public ChallengeInputsDbData ToStaticData() {
