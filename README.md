@@ -33,5 +33,3 @@ The code snippet provided showcases the architecture used to implement the Chall
 For any questions or further information, please feel free to reach out.
 
 ---
-
-Happy coding!
